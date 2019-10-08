@@ -3,63 +3,69 @@
 <title>Level 3- Abstract</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://league-level3.github.io/style.css">
+<link rel="stylesheet" href="https://league-central.github.io/curriculum/style/style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 
     
-<script src="https://league-level3.github.io/copyrightFooter.js"></script>
+<script src="https://league-central.github.io/curriculum/script/headerAndFooter.js"></script>
 
 <body>
+        <div id ="wrap">
+            <div id ="main" >
+                 <div id="header">
+                    <script>addRecipeHeader();</script>
+                </div>
 
 <h1>Abstract</h1>
 
-<p class="normal">
+<p id="recipePage">
 An abstract class is a way of grouping characteristics that other classes share, but that cannot in themselves represet an actual object, i.e. they cannot be instantiated. 
-    </p>
-    
-<p class="normal">
+<br>
+    <br>
     An analogy of this might be an Animal. There are lots of different types of animals out there and they share some basic similarities, e.g. they have a height, weight, etc., but there is no such thing as a generic animal. You would have to decide exactly which type of animal you want (cheetah, gorilla, duck, etc.) before you could define its precise characteristics. The Animal class is therefore abstract and could be defined as follows:
 </p>
-   <p class = "code">
-	public abstract class Animal { ... }<br>
-</p> 
- <p class="normal">
+    <pre style="width: 80%">
+	public abstract class Animal { ... }
+</pre> 
+<p id="recipePage">
     An abstract class can contain abstract methods. Abstract methods have no code, just the method signature. You make an abstract method when there is no sensible default code that all the subclasses could use. Continuing with the above analogy, the Animal class might have the following abstract method:
     </p>
-<p class = "code">
-	public abstract void communicate();<br>
-</p>
+    <pre style="width: 80%">
+	public abstract void communicate();
+</pre>
 
-<p class="normal">
+<p id="recipePage">
 A concrete class (not abstract) can extend an abstract class ...  
     </p>    
-<p class="code">
+    <pre style="width: 80%">
     public class Dog extends Animal { ... }
-</p>    
-    <p class="normal">... in which case it must implement a concrete version of the communicate method: 
+</pre>    
+<p id="recipePage">... in which case it must implement a concrete version of the communicate method: 
     </p>
-  <p class = "code">
-	public void communicate() {<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;if (isFrightened) {<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bark();<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;else {<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wagTail();<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+    <pre style="width: 80%">
+    public void communicate() {
+        if (isFrightened) {
+            bark();
+        }
+        else {
+            wagTail();
+        }
     }
-</p>
+</pre>
     
-    <p align="center"> <b>Things to find out before you finish this module:</b></p>
+    <br>    
+         <p class="normal" align="center"> <b>Things to find out before you finish this module:</b></p>
     
-    <p class="normal">
-	<li>The purpose of abstract methods</li><br>
-	<li>How to write an abstract method</li><br>
-	<li>How to extend an abstract class</li><br>
-    <li>The similarities and differences between a Java abstract class and a Java interface</li><br>
-	<li>When to use an abstract class or an interface</li><br>
+    
+<ol id="recipePage">
+ <li>The purpose of abstract methods</li>
+	<li>How to write an abstract method</li>
+	<li>How to extend an abstract class</li>
+    <li>The similarities and differences between a Java abstract class and a Java interface</li>
+	<li>When to use an abstract class or an interface</li>
 
 	
-    </p>
+    </ol>
     
     
     
@@ -77,11 +83,16 @@ A concrete class (not abstract) can extend an abstract class ...
        
       </div>
          
-   
-<br><br>
- <div id="copyright" style="float: left; width: 100%;">      
-        <script>copyright();</script>
-    </div>
- 
-   
-</body></html>
+    
+    
+                   </div>
+                   </div>
+
+             
+                
+<div id="footer">
+<script>addFooter();</script>
+</div>
+
+</body>
+</html>
