@@ -28,33 +28,33 @@ The program will have a window (frame) with a button that gives one of five rand
 </p><br>
 
 <ol id="recipePage">
-    <li> Make a FortuneCookieView class in the fortune_cookie package, with a <font color="green">showButton()</font> method like the one below: 
+    <li> Make a FortuneCookieView class in the fortune_cookie package, with a <font color="green">makeFrame()</font> method like the one below: 
    
     <pre>   public class FortuneCookieView {
-        public void showButton() {
-            System.out.println("Button clicked");
+        public void makeFrame() {
+            System.out.println("Making Frame");
        }
-    }</pre><br>
+    }</pre>
 </li>
    <li>Now make a runner class to run the code above, like the one below: 
              
         <pre>
     public class FortuneCookieRunner {
         public static void main(String[] args) {
-            new FortuneCookieView().showButton();
+            new FortuneCookieView().makeFrame();
         }
     }</pre>
        
 </li>
-   <li>Now change the showButton() method in Step 1, to make a JFrame and get it to show up when you run the program and set the default close operation to exit. Like this:
+   <li>Now change the makeFrame() method in Step 1, to make a JFrame and get it to show up when you run the program and set the default close operation to exit. Like this:
     <pre>
     frame.setVisible(true);
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</pre><br>
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</pre>
 </li>
    <li>Make a JButton and add it to the JFrame.
 <pre>    JButton button = new JButton("This is a button");
     frame.add(button);
-    frame.pack();</pre><br>
+    frame.pack();</pre>
 </li>
     
     <li>Run the program. Does the button show up?</li>
