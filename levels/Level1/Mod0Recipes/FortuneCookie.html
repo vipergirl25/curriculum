@@ -13,8 +13,7 @@
                     <div id="header">
                     <script>addRecipeHeader();</script>
                 </div>
-                
-
+   
 
 <h1>Fortune Cookie</h1>
 <br>
@@ -24,25 +23,30 @@ The program will have a window (frame) with a button that gives one of five rand
 </p><br>
 
 <ol id="recipePage">
-    <li> Make a FortuneCookieView class in the fortune_cookie package, with a <font color="green">makeFrame()</font> method like the one below: 
+    <li> Make a FortuneCookieView class in the fortune_cookie package, with a constructor and a <font color="green">makeFrame()</font> method like the one below: 
    
     <pre>   public class FortuneCookieView {
+    
+        public FortuneCookieView() {
+            makeFrame();
+        }
+        
         public void makeFrame() {
             System.out.println("Making Frame");
        }
     }</pre>
 </li>
-   <li>Now make a runner class to run the code above, like the one below: 
+   <li>Now make a runner class to run the code above, like the one below and run the progrem. Check the console for the message.
              
         <pre>
     public class FortuneCookieRunner {
         public static void main(String[] args) {
-            new FortuneCookieView().makeFrame();
+            new FortuneCookieView();
         }
     }</pre>
        
 </li>
-   <li>Now change the makeFrame() method in Step 1, to make a JFrame and get it to show up when you run the program and set the default close operation to exit. Like this:
+   <li>Now change the makeFrame() method in FortuneCookieView, to make a JFrame and get it to show up when you run the program and set the default close operation to exit. Like this:
     <pre>
     frame.setVisible(true);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</pre>
@@ -53,11 +57,11 @@ The program will have a window (frame) with a button that gives one of five rand
     frame.pack();</pre>
 </li>
     
-    <li>Run the program. Does the button show up?</li>
+    <li>Run the program again. Does the button show up?</li>
     
-    <h4>The next steps will make the view respond when the user clicks the button</h4><br>
+    <h4>The next steps will make the view react when the user clicks the button by adding a controller</h4><br>
     
-   <li>Make a FortuneCookieController class that implements ActionListener. Eclipse can help you to import the ActionListener and add the "unimplemented methods".  Check you now have an actionPerformed method in this controller class.
+   <li>Make a FortuneCookieController class that implements ActionListener. Eclipse can help you to import the ActionListener and add the "unimplemented methods".  Check you now have an actionPerformed method in this class.
      
 </li>
     <li>Put a JOptionPane pop-up inside the <font color="green">actionPerformed()</font> method that says "Woohoo".</li>
@@ -70,17 +74,18 @@ The program will have a window (frame) with a button that gives one of five rand
    <pre>    button.addActionListener(controller);</pre>
     </li>
 
-    <li>Run the program. Click on the button. What happens? You should get the Woohoo pop-up.</li>
-     <h4>Now we will make the pop-up deliver a random message</h4><br>  
+    <li>Run the program again. Click on the button. What happens? You should get the Woohoo pop-up.</li>
+     <h4>Now make the pop-up deliver a random message</h4><br>  
   <li>In the actionPerformed method of the controller, generate a random number between 0 and 4: 
     <pre>   int rand = new Random().nextInt(5);</pre></li>
 
     <li>Depending on the value of rand, show one of the five different fortunes.</li>
-        <li>[optional] Run other student's programs to receive fortunes from them.</li>
+        <li>[optional] Have other student run your program to receive their fortune prediction.</li>
                     </ol>
                 </div>
     </div>
-
+              
+                
 <div id="footer">
 <script>addFooter();</script>
 </div>
