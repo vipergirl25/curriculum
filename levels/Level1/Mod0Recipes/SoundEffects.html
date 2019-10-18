@@ -17,27 +17,31 @@
 
 <h1>Sound Effects Machine</h1>
 <br>
+                
+<p id="recipePage">
+Goal: Make a GUI program using Swing in a Model-View-Controller design architecture.<br><br>
+The program will have a window (frame) with a number of buttons that will play different sound effects when clicked.
+</p><br>                
+                
+                
 <ol id="recipePage">
-    <li>Create a GUI for a sound effects machine that will play different sounds when the buttons are pressed. You will need:<br>
+    
+
+     <li>Gather sound bites for your sound effects machine. <u>They must be .wav files.</u> Free sound effects can be found <a href="http://soundbible.com/free-sound-effects-1.html">here</a>. The League also has an account at <a href="https://freesound.org/">freesound</a>. Ask your teacher for our login.<br><br>
+        The .wav files must be <u>placed into your sound effects recipe package</u> (drag and drop).</li>
+    
+    
+    <li>Create a GUI for a sound effects machine that will play the different sounds (see above) when buttons are pressed. You will need FOUR classes to complete this program as follows:<br>
    <br>     
     
         <ul>
-            <li>a Model that will have the sound effects</li>
-            <li>a View that will have the frame, panel, and buttons. NOTE: because this GUI has more than one button, you must add a JPanel to your JFrame and put the buttons on the panel!</li>
-            <li>a Controller that will react to the button presses</li>
+            <li><h4>a Model</h4> that will have the sound effects (see the Drum Kit recipe for setting up sound (AudioClip) objects).</li>
+            <li><h4>a View</h4> that will have a frame, a panel, and buttons. NOTE: because this GUI has more than one button, you must add a JPanel to your JFrame and put the buttons on the panel! The View will need to have a variable for the controller (because it will need a mouse listener).</li>
+            <li><h4>a Controller</h4> that is a mouse listener so it can process button presses. The controller acts as the go-between so needs to have variabels for the view and model</li>
+            <li><h4>a Runner</h4> that will contain the main method and create the View object at the start of the program</li>
         </ul>    
-        If you need help, take a look at the previous recipes in this module.<br>
+        If you need help to get started, take a look at the previous recipes that you already completed in this module. Drum Kit is a good one to look at since it also plays sound files and will have a lot of methods you can use.<br>
         </li>
- <li>Gather sound bites. <u>They must be .wav files.</u> Free sound effects can be found <a href="http://soundbible.com/free-sound-effects-1.html">here</a>. The League also has an account at <a href="https://freesound.org/">freesound</a>. Ask your teacher for our login.<br><br>
-        The .wav files must be placed into your recipe package (drag and drop).</li>
- <li>Call this playSound() method when they click on a button. You will need to import java.applet.AudioClip
-<br>
-        
-
-<pre>private void playSound(String fileName) {<br>
-    AudioClip sound = JApplet.newAudioClip(getClass().getResource(fileName)); <br>
-    sound.play();<br>
-}</pre><br></li>
                 </ol>
                 </div>
     </div>           

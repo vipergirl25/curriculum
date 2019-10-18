@@ -17,33 +17,40 @@
  
 <h1>Cuteness TV</h1>
 <br>
+                
+ <p id="recipePage">
+Goal: Make a GUI program using Swing in a Model-View-Controller design architecture.<br><br>
+The program will have a window (frame) with a number of buttons that will show different videos when clicked.
+</p><br>                 
+                
+                
+                
+                
 <ol id="recipePage">
-<li>Make a user interface with 3 buttons that will play different videos depending on which button is clicked. You will need:<br>
+    
+    <li>You will need FOUR classes to complete this program as follows:<br>
    <br>     
     
         <ul>
-            <li>a Model that will have the video links</li>
-            <li>a View that will have the frame, panel, and buttons. NOTE: because this GUI has more than one button, you must add a JPanel to your JFrame and put the buttons on the panel!</li>
-            <li>a Controller that will react to the button presses.</li>
-        </ul>    
-        If you need help, take a look at the previous recipes in this module.<br>
-        </li>
-   <li>Use the methods below to play the cutest videos ever. <br>
-    
-  
+            <li><h4>a Model</h4> that will have the video links. Use the code below for the cutest videos ever. <br>
 <pre>
-void showDucks() {
-    playVideo("https://www.youtube.com/watch?v=MtN1YnoL46Q");
-}
-void showFrog() {
-    playVideo("https://www.youtube.com/watch?v=cBkWhkAZ9ds");
-}
-
-void showFluffyUnicorns() {
-    playVideo("https://www.youtube.com/watch?v=a-xWhG4UU_Y"); 
-} 
-     
-void playVideo(String videoID) { 
+String ducks = "https://www.youtube.com/watch?v=MtN1YnoL46Q";
+String frog ="https://www.youtube.com/watch?v=cBkWhkAZ9ds";
+String unicorns = "https://www.youtube.com/watch?v=a-xWhG4UU_Y"; 
+</pre>
+                <br>
+              
+Note: If any of these video links no longer work, go to youtube and get replacements. Use the String names to give you a hint about what the videos contain
+       
+            </li>
+            
+            <li><h4>a View</h4> that will have a frame, a panel, and 3 buttons. NOTE: because this GUI has more than one button, you must add a JPanel to your JFrame and put the buttons on the panel! The View will need to have a variable for the controller (because it will need a mouse listener).</li>
+            
+            <li><h4>a Controller</h4> that is a mouse listener so it can process button presses. The controller acts as the go-between so needs to have variabels for the view and model. Use the code below to play the videos:
+            
+            
+<pre>
+     void playVideo(String videoID) { 
      try {
         URI uri = new URI(videoID);
         java.awt.Desktop.getDesktop().browse(uri);
@@ -51,11 +58,24 @@ void playVideo(String videoID) {
         e.printStackTrace();
     }
 }
-</pre>
+</pre>            
+            
+            
+            </li>
+            
+            <li><h4>a Runner</h4> that will contain the main method and create the View object at the start of the program</li>
+        </ul>    
+        If you need help to get started, take a look at the previous recipes that you already completed in this module.<br>
+        </li>
+                </ol>                
+                
+
+   <li>
+    
+  
+
     </li>     
-   <h4>
-Note: If any of these video links no longer work, go to youtube and get replacements. Use the method names to give you a hint about what the videos should contain
-        </h4>
+
          </ol>   
     </div>
     </div>                
