@@ -46,20 +46,7 @@ Note: If any of these video links no longer work, go to youtube and get replacem
             
             <li><h4>a View</h4> that will have a frame, a panel, and 3 buttons. NOTE: because this GUI has more than one button, you must add a JPanel to your JFrame and put the buttons on the panel! The View will need to have a variable for the controller (because it will need a mouse listener).</li>
             
-            <li><h4>a Controller</h4> that is a mouse listener so it can process button presses. The controller acts as the go-between so needs to have variabels for the view and model. Use the code below to play the videos:
-            
-            
-<pre>
-void playVideo(String videoID) { 
-     try {
-        URI uri = new URI(videoID);
-        java.awt.Desktop.getDesktop().browse(uri);
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
-}
-</pre>            
-            
+            <li><h4>a Controller</h4> that is a mouse listener so it can process button presses. The controller acts as the go-between so needs to have variabels for the view and model. The controller will play the videos.
             
             </li>
             
