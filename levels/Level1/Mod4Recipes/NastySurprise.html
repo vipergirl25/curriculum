@@ -5,48 +5,61 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://league-central.github.io/curriculum/style/style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<style>
-   #moduleIndex {
-   padding: 0;
-    }
-</style>
+
 <script src="https://league-central.github.io/curriculum/script/headerAndFooter.js"></script>
 <body>
-        <div id ="wrap">
+         <div id ="wrap">
             <div id ="main">
-                 <div id="header">
+                <div id="header">
                     <script>addRecipeHeader();</script>
-                </div>    
-                <div id = "moduleIndex">   
+                </div>
 
 <h1>Nasty Surprise</h1>
 <br>
-    <p class="normal">
-1. Make a user interface that has 2 buttons. One says “Trick” the other says “Treat”. <br>
-<br>
-2. When the user clicks on the Trick button, show them a picture of a cute puppy. <br>
-<br>        
-3. When they click Treat, show them a scary image.<br>
-<br>
-To show the pictures, use the showPictureFromTheInternet() method below.<br>
+                    
+<p id="recipePage">
+Goal: Make a GUI program using Swing in a Model-View-Controller design architecture.<br><br>
+The program will have 2 buttons. One says “Trick” the other says “Treat”. When the user clicks on the Trick button, they will see a picture of a cute puppy. When they click Treat, they will see a scary image.
+</p><br> 
 
-        </p> <br>
+                
+<ol id="recipePage">
+    <h4>If you need help to get started, take a look at the recipes that you already completed in module 0<br></h4><br>
+    <li>You will need to create FOUR classes to complete this program as follows:<br>
+   <br>     
+    
+        <ul>
+            <li><h4>a Model</h4> has String variables that contain the addresses of two pictures on the Internet (use "copy image address" to get the address of an image).<br>
+                <br>
+                The model will also need two methods. One that returns an Icon that contains the "trick", and another that contains the "treat".  The model also needs the code below to make an Icon from an address (URL).<br>
+<pre>   private Icon getPictureFromTheInternet(String imageUrl) {
+        Icon icon = null;
+        try {
+            URL url = new URL(imageUrl);
+            icon = new ImageIcon(url);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        return icon;
+    }</pre>
+                <br>
 
-<pre>private void showPictureFromTheInternet(String imageUrl) {
-    try {
-        URL url = new URL(imageUrl);
-        Icon icon = new ImageIcon(url);
-        JLabel imageLabel = new JLabel(icon);
-        JFrame frame = new JFrame();
-        frame.add(imageLabel);
-        frame.setVisible(true);
-        frame.pack();
-    } catch (MalformedURLException e) {
-        e.printStackTrace();
-    }
-}</pre>
+       
+            </li>
+            
+            <li><h4>a View</h4> needs a frame, a panel, 2 buttons, and a label. NOTE: because this GUI has more than one component, you must add a JPanel to your JFrame and put the buttons and label onto the panel!<br> 
+            <br>    
+            The View must provide a method that will change the picture shown on the label and must also have a variable to hold a controller (because it will need a mouse listener on the buttons).</li>
+            
+            <li><h4>a Controller</h4> must be a mouse listener so it can process button presses. The controller acts as the go-between so needs to have variables for the view and model. The controller will retrieve a picture from the model based on which button was pressed, and send it to the view to be displayed on the label.       
+            </li>
+            
+            <li><h4>a Runner</h4> will contain the main method and create the View object to start the program</li>
+        </ul>    
 
-                </div>
+        </li>
+                </ol>                
+
     </div>
     </div>                
                 
