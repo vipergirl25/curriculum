@@ -5,56 +5,69 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://league-central.github.io/curriculum/style/style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<style>
-   #moduleIndex {
-   padding: 0;
-    }
-</style>
+
 <script src="https://league-central.github.io/curriculum/script/headerAndFooter.js"></script>
 <body>
-        <div id ="wrap">
+         <div id ="wrap">
             <div id ="main">
-                 <div id="header">
+                <div id="header">
                     <script>addRecipeHeader();</script>
-                </div>    
-                <div id = "moduleIndex">   
+                </div>
+
 
 <h1>Chuckle Clicker</h1>
 <br>
-    <p class="normal">
-We are going to tell the user jokes that have punchlines.
-        </p> <br>
- <p class="normal">
-     1. Make a ChuckleClicker class with a <font color="green">main</font> method and a <font color="green">makeButtons()</font> method. <br>
-     Open a pop-up that shows the message "Make Buttons" in the makeButtons method, to prove that it is working.<br>
-     (You will need to <u>instantiate</u> your class before you can call the method). 
-     <br>
-    <br>
-2. Now change the makeButtons() method, to make a JFrame and get it to show.
-<br>
-    <br>
-     3.Add a JPanel and two JButtons to the frame, so it looks a lot like this:<br>
-<br>     <br>
-     <img alt="" src="images/chuckle.png" style="width: 444.00px; height: 237.00px; margin-left: 100.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
-     <br>
-<br>     
-4. *[Optional] Customize your GUI with setText, setSize, etc.
-<br>
-    <br>
-         </p> <br>
-<p class="normal"><br>     
-5. Make a pop-up that says “hi” when either of the buttons are pressed. You will need to <u>add listeners</u> to the buttons for this to work.
-<br><br>
-    6. Check if the ActionEvent came from the joke button or the punchline button.  </p><br>
-<p class="code">
-    if(event.getSource() == jokeButton)</p><br>
-<p class="normal">
-    Hint: You might need to move the declaration of your buttons outside of the <font color="green">makeButtons()</font> method.
- </p><br>   
- <p class="normal"><br>     
-7. Use JOptionPane to print the joke or the punchline depending on which button was clicked.
-    </p>
-                </div>
+                
+ <p id="recipePage">
+Goal: Make a GUI program using Swing in a Model-View-Controller design architecture.<br><br>
+The program will have 2 buttons. One says “Joke” the other says “Punchline”. When the user clicks on the Joke button, they will see a joke. When they click Punchline, they will see the punchline.
+</p><br>
+                
+<ol id="recipePage">
+
+    <li>You will need to create FOUR classes to complete this program. <u>If you create all the classes before you start coding, it is easier to code and test each part as you go. </u> <br>
+   <br>                     
+                
+        <ul>
+             <li><h4>a Runner</h4> <br>This class will contain a main method and create a View object to start the program. You will need this object to test the rest of your code.</li>
+            
+             <li><h4>a Model</h4> <br>The model needs two String member variables for a joke and a punchline.<br>
+                It will also need two public methods. One that returns the joke, the other the punchline.<br>
+            </li>
+            
+          
+            <li><h4>a View</h4><br> 
+                The View object needs a member variable to hold a controller (because it will need a mouse listener to be added to the buttons).<br>
+                <br>
+
+                Place code to build a frame into a method (makeFrame). The frame will need 2 buttons, and a label. NOTE: because this GUI has more than one component, you must put the buttons and label onto a JPanel, then add the panel to the JFrame. 
+                <br><br>
+                Remember to set the frame to be visible, to exit on close, and to pack itself around the components to be the right size. You must add a mouse listener to each of the buttons (the controller).<br> 
+                <br>    
+                Make a constructor for this class. First initialize the constructor member variable. Next, place a call to the method you wrote to make the frame.<br><br>
+                
+                Code a public method that will change the label's text. 
+ 
+            <br>
+            
+            <li><h4>a Controller</h4> <br>This class must implement MouseListener methods so it can process mouse clicks. 
+            <br><br>    
+            It needs member variables for the view and model. 
+            <br><br>
+            Make a constructor for this class. The constructor will initialize the the model variable (call the model's constructor). It should get a view object as its parameter and use that to initialize the view variable (check the view class to make sure it is passing itself to this controller).
+            <br><br>    
+            In the mouseClicked method, check which button was clicked (getSource). Get the right text from the model (joke or punchline) and pass it to the view to be displayed on its label.
+            </li>
+            
+
+        </ul>    
+
+        </li>
+    <li>*Optional. Customize your GUI to make it more interesting with setText, setSize, etc.</li>
+                </ol>                               
+                
+                
+            
     </div>
     </div>                
                 
