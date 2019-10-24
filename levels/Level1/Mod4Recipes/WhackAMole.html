@@ -5,11 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://league-central.github.io/curriculum/style/style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<style>
-   #moduleIndex {
-   padding: 0;
-    }
-</style>
+
 <script src="https://league-central.github.io/curriculum/script/headerAndFooter.js"></script>
 <body>
         <div id ="wrap">
@@ -17,29 +13,63 @@
                  <div id="header">
                     <script>addRecipeHeader();</script>
                 </div>    
-                <div id = "moduleIndex">   
 
 <h1>Whack-a-Mole</h1>
 <br>
-    <p class="normal">
-We are going to make a game where the user has to click on a "mole". The game is timed so the user can get their "whack rate".
-        </p><br> 
+ <p id="recipePage">
+Goal: Make a GUI program using Swing in a Model-View-Controller design architecture.<br><br>The game shows 24 buttons and the user has to click on the "mole". The game is timed so the user can get their "whack rate".</p><br> 
 
-    <p class="normal">
-    1. Start building a basic Swing GUI to hold the game shown below (JFrame, JPanel, etc.)
-        </p><br> 
-    <p class="normal">
-     2. Make a drawButtons method that takes a random number as a parameter. It should make a GUI like the one in the picture below, but the “mole!” location will be random each time the frame is drawn.<br><br>
+<ol id="recipePage">
+    <li>You will need to create FOUR classes to complete this program. <u>If you create all the classes before you start coding, it is easier to code and test each part as you go. </u> <br></li>
+    <ul>
+             <li><h4>a Runner</h4> <br>This class will contain a main method and create a View object to start the program. You will need this object to test the rest of your code.</li>
         
-	[Hint: set the size of the frame rather than packing it.]
+             <li><h4>a Model</h4> <br>
+                    <ul><li>the number of holes</li>
+                <li>the max number of whacks allowed</li>
+                <li>the number of moles</li>
+                <li>the score of how many were whacked</li> 
+                 <li>the time of the first whack ( use new Date() )</li>
+                 <li>the time of the last whack  ( use new Date() here too )</li>
+                 <li>add the method below to the model</li>
+                 </ul>  
+                 
+<pre>public String whackRate() { 
+    return "Your whack rate is "+
+            ((timeAtEnd.getTime() - timeAtStart.getTime()) / 1000.00 / score)+
+            " moles per second.";
+}</pre><br>                 
+                 
+            </li>
+        
+             <li><h4>a View</h4><br> 
+                The View object needs a member variable to hold a controller (because it will need a mouse listener to be added to the buttons).<br>
+                <br>
+        
+         Place code to build a frame into a method (makeFrame). The frame will need one button for every hole in the game. NOTE: because this GUI has more than one component, you must use a JPanel. All of the buttons need a mouse listener.<br><br>
+                 Use a for loop to add the correct number of buttons to the panel, and use a random number to pick which of the buttons will display text that says “mole!”.<br>
+        <br>
+  
+	[Hint: a new GridLayout(8,3) was used to display the buttons in rows (like the image below)]
     <br>
     <br>
 
      <img alt="" src="images/whackAmole.png" style="width: 526.00px; height: 513.00px; margin-left: 100.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
      <br>
 <br>     
-3. If they click on a button other than “mole!”, use this speak() method to tell them they missed.
-</p>
+        Provide a method that disposes of the existing frame before recalling makeFrame to provide a new mole location.
+                <br><br>
+                 
+                 
+    <li><h4>a Controller</h4> <br>This class must implement MouseListener methods so it can process mouse clicks. 
+    <br><br>    
+    It needs member variables for the view and model. 
+    <br><br>
+    Make a constructor for this class. The constructor will initialize the the model variable (call the model's constructor). It should get a view object as its parameter and use that to initialize the view variable (check the view class to make sure it is passing itself to this controller).
+    <br><br>    
+    In the mouseClicked method, check which button was clicked (getSource). The text on the button will tell you if it is the mole.
+
+If they click on a button other than “mole!”, update the counts in the model, and use this speak() method to tell them they missed. If they click the mole button, update the counts in the model and say "ouch"! 
     <pre>void speak(String words) { 
     try { 
         Runtime.getRuntime().exec("say " + words).waitFor();
@@ -47,30 +77,26 @@ We are going to make a game where the user has to click on a "mole". The game is
         e.printStackTrace();
     }
 }</pre><br>
+ 
+Check the model after each mouse click to find out when the game is over and tell them the score and their whack rate before ending the game. If the game is not over, call a method on the view to draw a new mole location.         
         
-<p class="normal">
-4. Dispose of the frame and draw the buttons anew.
-<br><br>
-    5. After they’ve whacked 10 moles, call this endGame() method.  </p>
-    <pre>private void endGame(Date timeAtStart, int molesWhacked) { 
-    Date timeAtEnd = new Date();
-    JOptionPane.showMessageDialog(null, "Your whack rate is "
-            + ((timeAtEnd.getTime() - timeAtStart.getTime()) / 1000.00 / molesWhacked)
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ " moles per second.");
-}</pre><br>
-<p class="normal">
-    6. Count how many times they hit something other than the mole! button and change the "missed" comments each time (be nice). When they have missed five times, tell them they have lost, and end the game.<br><br>
-    Option: find out how you can use the switch statement to code this.
-    </p><br> 
-    
- <p class="normal">
-7. Find a sound file (.wav) and place it in your Java package. Call this playSound() method when they hit a mole.
-    </p>
+        </li>
+    </ul>
+    <li> <H4>Options</H4><br>
+        
+Add  more information to the "Game Over" message, e.g. include number of moles missed.        
+   <br><br>     
+ Find sound files (.wav) and place them in your Java package. Call this playSound() method when they hit (or miss) a mole.
+
     <pre>private void playSound(String fileName) { 
     AudioClip sound = JApplet.newAudioClip(getClass().getResource(fileName));
     sound.play();
 }</pre><br>
-                </div>
+   <br> 
+    
+                </li>      
+            </ol>
+          
     </div>
     </div>                
                 
