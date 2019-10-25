@@ -18,11 +18,12 @@
 <h1>Fortune Cookie</h1>
 <br>
 <p id="recipePage">
-Goal: Make a Swing program from scratch.<br><br>
-The program will have a window (frame) with a button that gives one of five random fortunes when clicked.
+Goal: Make a program from scratch that has a View (Swing GUI) and Controller (ActionListener).<br><br>
+The View will have a window (frame) with a button that displays one of five random fortunes when the mouse is clicked on the button.
 </p><br>
 
 <ol id="recipePage">
+    <h4>The View</h4><br>
     <li> Make a FortuneCookieView class in the fortune_cookie package, with a constructor and a <font color="green">makeFrame()</font> method like the one below: 
    
     <pre>   public class FortuneCookieView {
@@ -36,7 +37,7 @@ The program will have a window (frame) with a button that gives one of five rand
        }
     }</pre>
 </li>
-   <li>Now make a runner class to run the code above, like the one below and run the progrem. Check the console for the message.
+   <li>Now make a runner class to run the code above (see below) and run the program. Did you get the "Making Frame" message.
              
         <pre>
     public class FortuneCookieRunner {
@@ -59,14 +60,14 @@ The program will have a window (frame) with a button that gives one of five rand
     
     <li>Run the program again. Does the button show up?</li>
     
-    <h4>The next steps will make the view react when the user clicks the button by adding a controller</h4><br>
+        <h4>Connect a Controller</h4><br>
     
-   <li>Make a FortuneCookieController class that implements ActionListener. Eclipse can help you to import the ActionListener and add the "unimplemented methods".  Check you now have an actionPerformed method in this class.
+   <li>Make a FortuneCookieController class that implements ActionListener. Eclipse can help you to import the ActionListener and add the "unimplemented methods".  Check you now have a method called <font color="green">actionPerformed()</font> in this class.
      
 </li>
     <li>Put a JOptionPane pop-up inside the <font color="green">actionPerformed()</font> method that says "Woohoo".</li>
     
-    <li>Add a member variable to the FortuneCookieView class to hold the controller object.
+    <li>Add a member variable to the FortuneCookieView class to hold this controller object.
     <pre>
     FortuneCookieController controller = new FortuneCookieController();</pre></li>
     
@@ -80,7 +81,7 @@ The program will have a window (frame) with a button that gives one of five rand
     <pre>   int rand = new Random().nextInt(5);</pre></li>
 
     <li>Depending on the value of rand, show one of the five different fortunes.</li>
-        <li>[optional] Have other student run your program to receive their fortune prediction.</li>
+        <li>[optional] Have other students run your program to receive their fortunes.</li>
                     </ol>
                 </div>
     </div>

@@ -17,22 +17,28 @@
 
 <h1>Jack-in-the-Box</h1>
 <br>
+                
+<p id="recipePage">
+Goal: Make a program from scratch that has a View (Swing GUI) and Controller (ActionListener).<br><br>
+The View will have a window (frame) with a single button. A surprise will appear after the button has been clicked 5 times.
+</p><br>                
+                
+                
 <ol id="recipePage">
-	<li>Create a user interface (GUI) that has a single button labeled "Surprise".<br>
-        You will need:<br>
-   <br>     
+    <h4>The View</h4><br>    
+	<li>Create a View class to build a frame wuth a button labeled "Surprise!".<br><br> 
+        If you need help, take a look at the previous recipes in this module.</li>
+<li>Now make a runner class to run the code above. Run the program. Make sure the frame and button show up before proceeding.</li>
+        
+        <h4>Connect a Controller</h4><br>   <li>Make a Controller class that implements ActionListener.<br><br> 
+        If you need help, take a look at the previous recipes in this module.</li>  
     
-        <ul>
-            <li>a View that will have the frame and a button.</li>
-            <li>a Controller that will react to the button presses.</li>
-        </ul>    
-        If you need help, take a look at the previous recipes in this module.<br>
-        </li>
-        <br>
-
-   <li>When the user presses the surprise button 5 times, show them a jack-in-the-box.<br>
-       Use the methods below to help you show the jack-in-the-box in a new frame.<br>
-     (A sample picture (jackInTheBox.png) is provided in the recipe package)<br>
+        <li>Add the controller to the Surprise button.</li>
+          
+   <li>Put code in the controller, so that when the user presses the surprise button 5 times, show them a jack-in-the-box.<br><br>
+    
+       Use the methods below to make the jack-in-the-box appear.<br>
+     (A sample picture (jackInTheBox.png) is provided in the recipe package, but you can use another)<br>
 
 
 <pre>private void showPicture(String fileName) {
@@ -63,8 +69,8 @@ private JLabel createLabelImage(String fileName) {
         }
 }</pre><br>
 </li>
-	<li>Now play a sound when the jack-in-the-box pops up using this method.<br>
-        (A sample sound (homer-woohoo.wav) is provided in the recipe package)
+	<li>Now add code to play a sound when the jack-in-the-box pops up using this method.<br>
+        (A sample sound (homer-woohoo.wav) is provided in the recipe package but you can use another)
  
  <pre>private void playSound(String soundFile) { 
     try {
