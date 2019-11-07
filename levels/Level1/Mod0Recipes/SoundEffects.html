@@ -19,29 +19,43 @@
 <br>
                 
 <p id="recipePage">
-Goal: Make a GUI program using Swing in a Model-View-Controller design architecture.<br><br>
-The program will have a window (frame) with a number of buttons that will play different sound effects when clicked.
+Goal: Make a program that uses Model-View-Controller (MVC) design architecture.
+<br><br>
+This program will have a window (frame) with a number of buttons that will play different sound effects when clicked.
 </p><br>                
                 
                 
 <ol id="recipePage">
+        If you need help with any of these steps, take a look at the previous recipes in this module.<br> <br> 
     
+      <h4>Complete the Model</h4><br>  
+    <li>A sample sound effect (drum) has been provided. Add some more of your own here.<br>
+    <br>
+     <u>They must be .wav files.</u> Free sound effects can be found <a href="http://soundbible.com/free-sound-effects-1.html">here</a>. The League also has an account at <a href="https://freesound.org/">freesound</a>. Ask your teacher for our login.<br><br>
+    The .wav files must be placed into your <font color="green">sound_effects_machine</font> package (drag and drop).</li>
 
-    <li>Create a GUI for a sound effects machine that will play the different sounds (see above) when buttons are pressed. You will need FOUR classes to complete this program as follows:<br>
-   <br>     
     
-        <ul>
-            <li><h4>a Model</h4> that will have the sound effects (see the Drum Kit recipe for setting up sound (AudioClip) objects).<br>
-            <br>
-             Gather sound bites for your sound effects machine. <u>They must be .wav files.</u> Free sound effects can be found <a href="http://soundbible.com/free-sound-effects-1.html">here</a>. The League also has an account at <a href="https://freesound.org/">freesound</a>. Ask your teacher for our login.<br><br>
-            The .wav files must be <u>placed into your sound effects recipe package</u> (drag and drop).</li>
     
-            <li><h4>a View</h4> that will have a frame, a panel, and buttons. NOTE: because this GUI has more than one button, you must add a JPanel to your JFrame and put the buttons on the panel! The View will need to have a variable for the controller (because it will need a mouse listener).</li>
-            <li><h4>a Controller</h4> that is a mouse listener so it can process button presses. The controller acts as the go-between so needs to have variables for the view and model</li>
-            <li><h4>a Runner</h4> that will contain the main method and create the View object at the start of the program</li>
-        </ul>    
-        If you need help to get started, take a look at the previous recipes that you already completed in this module. Drum Kit is a good one to look at since it also plays sound files and will have a lot of methods you can use.<br>
-        </li>
+    
+    
+      <h4>Make the View</h4><br>  
+       <li>Find the SoundEffects class in the <font color="green">sound_effects_machine</font> package. Complete the makeFrame() method to create a frame, a panel, and a button for each sound effect in your machine. NOTE: you must add a JPanel to your JFrame because there will be more than one button! Make a variable for the controller (which will be a MouseListener).</li>
+    
+     <h4>Runner</h4><br>         
+    <li>Run the SoundEffectsRunner class (has a main method). Make sure it is showing your frame with buttons before proceeding.</li> 
+
+    
+    
+    
+    
+    <h4>Connect a Controller</h4><br>          
+      <li>Find the SoundEffectsController class. Make it a MouseListener so it can process mouse clicks.</li>            
+       <li>Create and initialize variables for the view and model objects where shown.</li>      
+     <li>If you successsfully made it a MouseListener, there should be a mouseClicked method. Add code to this method for each of the buttons on the view. Hint: use the button text to figure out which one was clicked</li>
+    <li>Call the method on the Model that will return the sound (AudioClip) you want, then tell the AudioClip to play.</li>
+       <li>Run the SoundEffectsRunner and check that each of the buttons plays the right sound.</li>  
+<br>
+        
                 </ol>
                 </div>
     </div>           

@@ -18,17 +18,17 @@
 <h1>Fortune Cookie</h1>
 <br>
 <p id="recipePage">
-Goal: Make a program from scratch that has a View (Swing GUI) and Controller (ActionListener).<br><br>
-The View will have a window (frame) with a button that displays one of five random fortunes when the mouse is clicked on the button.
+Goal: Make a program from scratch that has a View (JFrame) and Controller (ActionListener).<br><br>
+The View will present a window (frame) with a button that will cause one of five random fortunes to pop up when the mouse is clicked on it.
 </p><br>
 
 <ol id="recipePage">
-    <h4>The View</h4><br>
-    <li> Make a FortuneCookieView class in the fortune_cookie package, with a constructor and a <font color="green">makeFrame()</font> method like the one below: 
-   
-    <pre>   public class FortuneCookieView {
     
-        public FortuneCookieView() {
+    <li> Make a FortuneCookie class in the fortune_cookie package, with a constructor and a <font color="green">makeFrame()</font> method like this: 
+   
+    <pre>   public class FortuneCookie {
+    
+        public FortuneCookie() {
             makeFrame();
         }
         
@@ -37,22 +37,26 @@ The View will have a window (frame) with a button that displays one of five rand
        }
     }</pre>
 </li>
-   <li>Now make a runner class to run the code above (see below) and run the program. Did you get the "Making Frame" message.
+
+   <li>Now make a FortuneCookieRunner class to run this program. Runner classes have a main method. Look for the "Making Frame" message on the console when you run this.
              
         <pre>
     public class FortuneCookieRunner {
         public static void main(String[] args) {
-            new FortuneCookieView();
+            new FortuneCookie();
         }
     }</pre>
+       <br> 
        
+      <h4>Make the View (Frame with a Button)</h4>     
 </li>
-   <li>Now change the makeFrame() method in FortuneCookieView, to make a JFrame and get it to show up when you run the program and set the default close operation to exit. Like this:
+   <li>Go back to the FortuneCookie class and put this code into the makeFrame() method in place of the print statement. This code creates a JFrame and gets it to show up when you run the program, but it will be very small until you add Components to it.
     <pre>
+    JFrame frame = new JFrame();
     frame.setVisible(true);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</pre>
 </li>
-   <li>Make a JButton and add it to the JFrame.
+   <li>Add this code to create a JButton and add it to the frame.
 <pre>    JButton button = new JButton("This is a button");
     frame.add(button);
     frame.pack();</pre>
@@ -60,27 +64,27 @@ The View will have a window (frame) with a button that displays one of five rand
     
     <li>Run the program again. Does the button show up?</li>
     
-        <h4>Connect a Controller</h4><br>
+        <h4>Connect a Controller (ActionListener)</h4><br>
     
-   <li>Make a FortuneCookieController class that implements ActionListener. Eclipse can help you to import the ActionListener and add the "unimplemented methods".  Check you now have a method called <font color="green">actionPerformed()</font> in this class.
+   <li>Make a FortuneCookieController class that implements ActionListener. Eclipse can help you to import ActionListener into this program.  Next, Eclipse can help you to add the "unimplemented method" for an ActionListener.  Check that you now have a method called <font color="green">actionPerformed()</font> in this class.
      
 </li>
-    <li>Put a JOptionPane pop-up inside the <font color="green">actionPerformed()</font> method that says "Woohoo".</li>
+    <li>Inside the <font color="green">actionPerformed()</font> method, put code that will show a JOptionPane pop-up that says "Woohoo".</li>
     
-    <li>Add a member variable to the FortuneCookieView class to hold this controller object.
+    <li>Go back to the FortuneCookie class. Declare and initialize a member variable for a new Controller object, like this:
     <pre>
     FortuneCookieController controller = new FortuneCookieController();</pre></li>
     
-   <li>To connect the controller to the button, add an action listener to the button like this:
+   <li>To connect the controller to the button, add it as an ActionListener to the button like this:
    <pre>    button.addActionListener(controller);</pre>
     </li>
 
     <li>Run the program again. Click on the button. What happens? You should get the Woohoo pop-up.</li>
      <h4>Now make the pop-up deliver a random message</h4><br>  
-  <li>In the actionPerformed method of the controller, generate a random number between 0 and 4: 
+  <li>Go back to the FortuneCookieController class. In the actionPerformed method, generate a random number between 0 and 4: 
     <pre>   int rand = new Random().nextInt(5);</pre></li>
 
-    <li>Depending on the value of rand, show one of the five different fortunes.</li>
+    <li>Depending on the value of rand, show one of the five different fortunes in a pop-up.</li>
         <li>[optional] Have other students run your program to receive their fortunes.</li>
                     </ol>
                 </div>
