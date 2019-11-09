@@ -18,22 +18,21 @@
 <br>
                     
 <p id="recipePage">
-Goal: Make a GUI program using Swing in a Model-View-Controller design architecture.<br><br>
-The program will have 2 buttons. One says “Trick” the other says “Treat”. When the user clicks on the Trick button, they will see a picture of a cute puppy. When they click Treat, they will see a scary image.
+Goal: Make a program that uses Model-View-Controller (MVC) design architecture.
+<br><br>
+This program will have a window (frame) with 2 buttons. One says “Trick” the other says “Treat”. When the user clicks on the Trick button, they will see a picture of a cute puppy. When they click Treat, they will see a scary image.
 </p><br> 
 
                 
 <ol id="recipePage">
-
-    <li>You will need to create FOUR classes to complete this program. <u>If you create all the classes before you start coding, it is easier to code and test each part as you go. </u> <br>
-   <br>     
+    If you need help with any of these steps, take a look at the MVC recipes in Module 0<br><br> 
+    All the classes for this program should be created in the <font color="green">nasty_surprise</font> package.<br> <br> Create FOUR classes to complete this program. <u>If you create all the classes before you start coding, it is easier to code and test each part as you go. </u> <br>  <br> 
+<ul>
     
-        <ul>
-             <li><h4>a Runner</h4> <br>This class will contain a main method and create a View object to start the program. You will need this object to test the rest of your code.</li>
-            
-            <li><h4>a Model</h4> <br>The model needs two String variables that contain the addresses of two pictures on the Internet (use "copy image address" to get the address of an image).<br>
-                <br>
-                It will also need two public methods. One that returns an Icon that contains the "trick", and another that contains the "treat".  The model also needs the code below to make an Icon from an address (URL).<br>
+    <h4>Make the Model</h4> <br>
+     <li>Create a class for the Model. </li>  
+    <li>Add two String variables that are initialized to the Internet addresses of two pictures (use a browser to find images, and "copy image address").</li>
+    <li>Create two public methods. One that returns the puppy Icon, and another that returns the scary Icon.  Here is some code you can use to make an Icon (image) from an Internet address (String).<br>
                 
 <pre>   private Icon getPictureFromTheInternet(String imageUrl) {
         Icon icon = null;
@@ -45,36 +44,49 @@ The program will have 2 buttons. One says “Trick” the other says “Treat”
         }
         return icon;
     }</pre>
-                <br>
+                <br>  
+            </li>    
+   
+      <h4>Make the View</h4><br> 
+            <li>
+        Create a class for the View.</li>
 
-       
-            </li>
-            
-            <li><h4>a View</h4> <br> 
-                The View object needs a member variable to hold a controller (because it will need a mouse listener to be added to the buttons).<br>
-                <br>
-            
-            Place code to build a frame into a method (makeFrame). The frame will need 2 buttons, and a label. NOTE: because this GUI has more than one component, you must put the buttons and label onto a JPanel, then add the panel to the JFrame. 
-                <br><br>
-                Remember to set the frame to be visible, to exit on close, and to pack itself around the components to be the right size. You must add a mouse listener to each of the buttons (the controller).<br> 
-                <br>    
-                Make a constructor for this class. First initialize the controller member variable. Next, place a call to the method you wrote to make the frame.<br><br>    
-                
-                
-                
-            Code a public method that will change the picture shown on the label. You will need to re-pack the frame every time the picture changes.</li>
-            
-            <li><h4>a Controller</h4> <br>This class must implement MouseListener methods so it can process mouse clicks. 
-            <br><br>
-            It needs member variables for the view and model. 
-            <br><br>    
-            Make a constructor for this class. The constructor will initialize the the model variable (call the model's constructor). It should get a view object as its parameter and use that to initialize the view variable (check the view class to make sure it is passing itself to this controller).
-            <br><br>    
-            In the mouseClicked method, check which button was clicked (getSource). Get the right picture from the model (trick or treat) based on which button was pressed, and send it to the view to be displayed on the label.       
-            </li>
-        </ul>    
+    <li>
+    Add a method that will make the View. It should create a frame, a panel, two buttons ("trick" and "treat") and a label (for the picture).
+    
+    Remember to set the frame to be visible, to exit on close, and to pack the frame so it will be the right size. </li> 
 
-        </li>
+    <li>Add a member variable for the controller </li>  
+    
+    <li>Make a constructor for this class. In the constructor, initialize a controller member variable. Next, call the method you just wrote to make the frame.</li>
+
+
+    <li>Make a public method that will change the picture shown on the label (setIcon). You will also need to pack the frame every time the picture changes in case it is a different size.</li>
+    
+    <h4>Make the Controller</h4><br> 
+    <li>Create a class for the Controller. This class must implement MouseListener methods so it can process mouse clicks. </li>
+    
+    <li>Add member variables for a view and a model. </li>
+    
+    <li>Make a constructor for this class. The constructor will initialize the the model variable (call the model's constructor). It must get a view object as a parameter and use that to initialize its view variable (check the view class to make sure it is passing itself to this controller).
+    </li>   
+    <li>In the mouseClicked method, check which button was clicked (getSource). Get the right picture from the model (trick or treat) based on which button was pressed, and send it to change the picture.       
+    </li>
+    <li>Now you have finished the Controller, go back to the View and add a MouseListener (the controller) to each of its buttons.
+    </li>            
+                
+    <h4>Make a Runner</h4><br>
+        <li>
+       Create a Runner class.</li>
+     <li>This class should contain a main method that creates a View object to start the program. You will need this object to test the rest of your code.</li>
+        
+    <li><h4>Now run the program to test it</h4></li>
+        
+   </ul>     
+        
+        
+    <br>
+
                 </ol>                
 
     </div>
