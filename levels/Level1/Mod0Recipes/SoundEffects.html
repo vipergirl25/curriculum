@@ -26,10 +26,10 @@ This program will have a window (frame) with a number of buttons that will play 
                 
                 
 <ol id="recipePage">
-        If you need help with any of these steps, take a look at the previous recipes in this module.<br> <br> 
-    
+        If you need help with any of these steps, take a look at the previous recipes in this module.<br> 
+    All the classes for this program are in the  in the <font color="green">sound_effects_machine</font> package.<br> <br> 
       <h4>Complete the Model</h4><br>  
-    <li>A sample sound effect (drum) has been provided. Add some more of your own here.<br>
+    <li>Find the <font color="green">SoundEffectsModel</font> class. A sample sound effect (drum) has been provided. Add some more of your own here.<br>
     <br>
      <u>They must be .wav files.</u> Free sound effects can be found <a href="http://soundbible.com/free-sound-effects-1.html">here</a>. The League also has an account at <a href="https://freesound.org/">freesound</a>. Ask your teacher for our login.<br><br>
     The .wav files must be placed into your <font color="green">sound_effects_machine</font> package (drag and drop).</li>
@@ -39,20 +39,17 @@ This program will have a window (frame) with a number of buttons that will play 
     
     
       <h4>Make the View</h4><br>  
-       <li>Find the SoundEffects class in the <font color="green">sound_effects_machine</font> package. Complete the makeFrame() method to create a frame, a panel, and a button for each sound effect in your machine. NOTE: you must add a JPanel to your JFrame because there will be more than one button! Make a variable for the controller (which will be a MouseListener).</li>
+    <li>Find the <font color="green">SoundEffects</font> class. Complete the makeFrame() method to create a frame, a panel, and a button for each sound effect in your machine. NOTE: you must add a JPanel to your JFrame because there will be more than one button! Make a variable for the controller (which will be a MouseListener).</li>
     
      <h4>Runner</h4><br>         
-    <li>Run the SoundEffectsRunner class (has a main method). Make sure it is showing your frame with buttons before proceeding.</li> 
+    <li>Run the <font color="green">SoundEffectsRunner</font> class (has a main method). Make sure it is showing your frame with buttons before proceeding.</li> 
 
     
     
     
     
     <h4>Connect a Controller</h4><br>          
-      <li>Find the SoundEffectsController class. Make it a MouseListener so it can process mouse clicks.</li>            
-       <li>Create and initialize variables for the view and model objects where shown.</li>      
-     <li>If you successsfully made it a MouseListener, there should be a mouseClicked method. Add code to this method for each of the buttons on the view. Hint: use the button text to figure out which one was clicked</li>
-    <li>Call the method on the Model that will return the sound (AudioClip) you want, then tell the AudioClip to play.</li>
+    <li>Find the <font color="green">SoundEffectsController </font>class and follow the instructions to complete it. Don't forget to add this MouseListener to all the buttons on the View!</li>
        <li>Run the SoundEffectsRunner and check that each of the buttons plays the right sound.</li>  
 <br>
         
